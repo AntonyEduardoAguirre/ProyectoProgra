@@ -102,11 +102,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="producto.h" />
+    <ClCompile Include="registro.cpp" />
+    <QtMoc Include="Registro.h" />
     <QtRcc Include="practicaproyecto.qrc" />
-    <QtUic Include="practicaproyecto.ui" />
-    <QtMoc Include="practicaproyecto.h" />
-    <ClCompile Include="practicaproyecto.cpp" />
+    <QtUic Include="inicio.ui" />
+    <QtMoc Include="Inicio.h" />
+    <ClCompile Include="inicio.cpp" />
     <ClCompile Include="main.cpp" />
+    <QtUic Include="registro.ui" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="cliente.h" />
+    <ClInclude Include="datos.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

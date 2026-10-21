@@ -21,18 +21,21 @@
       <UniqueIdentifier>{639EADAA-A684-42e4-A9AD-28FC9BCB8F7C}</UniqueIdentifier>
       <Extensions>ts</Extensions>
     </Filter>
+    <Filter Include="Header Files\Clases">
+      <UniqueIdentifier>{b934171e-90ad-4f86-9177-71928620694b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Paginas">
+      <UniqueIdentifier>{96a92671-f0ea-40c7-a9fb-8f69c70c5987}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="practicaproyecto.qrc">
       <Filter>Resource Files</Filter>
     </QtRcc>
-    <QtUic Include="practicaproyecto.ui">
+    <QtUic Include="inicio.ui">
       <Filter>Form Files</Filter>
     </QtUic>
-    <QtMoc Include="practicaproyecto.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <ClCompile Include="practicaproyecto.cpp">
+    <ClCompile Include="inicio.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -40,5 +43,32 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="producto.h">
+      <Filter>Header Files\Clases</Filter>
+    </ClCompile>
+    <ClCompile Include="registro.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="cliente.h">
+      <Filter>Header Files\Clases</Filter>
+    </ClInclude>
+    <ClInclude Include="datos.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="Inicio.h">
+      <Filter>Header Files\Paginas</Filter>
+    </QtMoc>
+    <QtMoc Include="Registro.h">
+      <Filter>Header Files\Paginas</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="registro.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
   </ItemGroup>
 </Project>

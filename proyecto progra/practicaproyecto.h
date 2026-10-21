@@ -16,7 +16,7 @@ public:
     ~practicaproyecto();
 
 private:
-    bool validarSesion(vector<string> nombresRegistrados, vector<string> contrasennasRegistrados);
+    bool validarSesion();
     Ui::practicaproyectoClass ui;
 };
 

@@ -14,13 +14,31 @@ inline QList<Producto> productos;
 inline Cliente usuarioActual;  // variable global para almacenar el usuario actual
 inline int siguienteIdCliente = 1;   // id que recibirá el próximo usuario
 
-inline QString rutaArchivo(const QString& nombre)
+inline QString carpetaDatos()
 {
-    QString carpeta = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
-    QDir().mkpath(carpeta);   // crea la carpeta si no existe
-    return carpeta + "/" + nombre;
+    static QString ruta;
+    if (!ruta.isEmpty())
+        return ruta;
+
+    QDir dir(QCoreApplication::applicationDirPath());
+    do {
+        if (!dir.entryList({ "*.slnx", "*.sln" }, QDir::Files).isEmpty()) {
+            ruta = dir.filePath("datos");
+            break;
+        }
+    } while (dir.cdUp());
+
+    if (ruta.isEmpty())   // respaldo: programa ejecutado fuera del árbol del proyecto
+        ruta = QCoreApplication::applicationDirPath() + "/datos";
+
+    QDir().mkpath(ruta);  // crea la carpeta si no existe
+    return ruta;
 }
 
+inline QString rutaArchivo(const QString& nombre)
+{
+    return carpetaDatos() + "/" + nombre;
+}
 // ---------------------------------------------------------------
 // Funciones genéricas: sirven para cualquier clase T que tenga
 //   QJsonObject T::toJson() const

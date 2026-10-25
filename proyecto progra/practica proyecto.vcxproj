@@ -106,6 +106,7 @@
     <ClCompile Include="cuenta.cpp" />
     <ClCompile Include="producto.h" />
     <ClCompile Include="registro.cpp" />
+    <ClCompile Include="Seguro.cpp" />
     <QtMoc Include="Registro.h" />
     <QtRcc Include="practicaproyecto.qrc" />
     <QtUic Include="Cambio.ui" />
@@ -115,8 +116,10 @@
     <ClCompile Include="main.cpp" />
     <QtUic Include="registro.ui" />
     <QtUic Include="cuenta.ui" />
+    <QtUic Include="Seguro.ui" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="Seguro.h" />
     <QtMoc Include="Cambio.h" />
     <ClInclude Include="cliente.h" />
     <QtMoc Include="Cuenta.h" />

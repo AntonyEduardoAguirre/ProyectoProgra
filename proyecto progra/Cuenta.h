@@ -13,6 +13,5 @@ public:
 
 private:
     void actualizarDatos();
-    void desactivarCuenta();
     Ui::cuentaClass ui;
 };

@@ -2,6 +2,7 @@
 #include "inicio.h"
 #include "datos.h"
 #include "cambio.h"
+#include "seguro.h"
 
 #include <QCloseEvent>
 
@@ -19,7 +20,11 @@ cuenta::cuenta(QWidget* parent)
 		this->close();   // cierra registro
 		});
 
-	connect(ui.btnDesactivar, &QPushButton::clicked, this, &cuenta::desactivarCuenta);
+	connect(ui.btnDesactivar, &QPushButton::clicked, this, [this]() {
+		seguro* ventanaSeguro = new seguro();
+		ventanaSeguro->setWindowModality(Qt::ApplicationModal);
+		ventanaSeguro->show();
+	});
 
 	connect(ui.btnCambiar, &QPushButton::clicked, this, [this]() {
 		cambio* ventanaCambio = new cambio();
@@ -40,17 +45,3 @@ void cuenta::actualizarDatos() {
 	ui.lblId->setText("Mi id: " + QString::number(usuarioActual.id));
 }
 
-void cuenta::desactivarCuenta() {
-	// Eliminar el usuario actual de la lista de clientes
-	for (int i = 0; i < clientes.size(); ++i) {
-		if (clientes[i].getId() == usuarioActual.getId()) {
-			clientes.erase(clientes.begin() + i);
-			break;
-		}
-	}
-	guardarClientes();
-	inicio* ventanaInicio = new inicio();
-	ventanaInicio->setAttribute(Qt::WA_DeleteOnClose); // libera memoria al cerrarla
-	ventanaInicio->show();
-	this->close();   // cierra cuenta
-}

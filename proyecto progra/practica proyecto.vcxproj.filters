@@ -55,6 +55,9 @@
     <ClCompile Include="cambio.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Seguro.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cliente.h">
@@ -77,6 +80,9 @@
     <QtMoc Include="Cambio.h">
       <Filter>Header Files\Paginas</Filter>
     </QtMoc>
+    <QtMoc Include="Seguro.h">
+      <Filter>Header Files\Paginas</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="registro.ui">
@@ -86,6 +92,9 @@
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="Cambio.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="Seguro.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>
